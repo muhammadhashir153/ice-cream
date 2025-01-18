@@ -25,6 +25,7 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { RecipeService } from './services/recipe.service';
 import { FAQComponent } from './faq/faq.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddProductComponent } from './products/add-product/add-product.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContactUsComponent,
     AddRecipeComponent,
     FAQComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
