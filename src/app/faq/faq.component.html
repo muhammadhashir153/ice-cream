@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-list">
+      <div *ngFor="let faq of faqs" class="faq-item">
+        <div class="faq-question" (click)="toggleFAQ(faq)">
+          <h2>{{ faq.question }}</h2>
+          <span class="toggle-icon">{{ faq.isExpanded ? '−' : '+' }}</span>
+        </div>
+        <div class="faq-answer" [class.expanded]="faq.isExpanded">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

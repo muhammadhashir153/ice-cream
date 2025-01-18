@@ -1,0 +1,55 @@
+<div class="container">
+    <h1>Add a New Ice Cream Recipe</h1>
+    <form (ngSubmit)="onSubmit()" #recipeForm="ngForm">
+      <div class="form-group">
+        <label for="name">Recipe Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="recipe.name" required #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Recipe name is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" [(ngModel)]="recipe.description" required #description="ngModel"></textarea>
+        <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+          Description is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="ingredients">Ingredients (one per line)</label>
+        <textarea id="ingredients" name="ingredients" [(ngModel)]="recipe.ingredients" required #ingredients="ngModel"></textarea>
+        <div [hidden]="ingredients.valid || ingredients.pristine" class="alert alert-danger">
+          Ingredients are required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="instructions">Instructions</label>
+        <textarea id="instructions" name="instructions" [(ngModel)]="recipe.instructions" required #instructions="ngModel"></textarea>
+        <div [hidden]="instructions.valid || instructions.pristine" class="alert alert-danger">
+          Instructions are required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="prepTime">Preparation Time (in minutes)</label>
+        <input type="number" id="prepTime" name="prepTime" [(ngModel)]="recipe.prepTime" required #prepTime="ngModel">
+        <div [hidden]="prepTime.valid || prepTime.pristine" class="alert alert-danger">
+          Preparation time is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="servings">Number of Servings</label>
+        <input type="number" id="servings" name="servings" [(ngModel)]="recipe.servings" required #servings="ngModel">
+        <div [hidden]="servings.valid || servings.pristine" class="alert alert-danger">
+          Number of servings is required
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="!recipeForm.form.valid">Submit Recipe</button>
+    </form>
+  </div>
+  

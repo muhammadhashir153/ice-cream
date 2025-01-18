@@ -1,0 +1,27 @@
+<header>
+  <div class="container">
+    <a routerLink="/home" class="logo">Ice Cream Shop</a>
+    <nav>
+      <ul>
+        <!-- Main Menu Items -->
+        <li>
+          <a routerLink="/free-recipes">Free Recipe Available</a>
+          <a routerLink="/order-books">Order Recipe Books</a>
+          <a routerLink="/contact-us">Contact Us</a>
+          <a *ngIf="isLogedIn" routerLink="/add-recipe">Add Recipe</a>
+          <a routerLink="/faqs">FAQ’s</a>
+
+        </li>
+        <li>
+          <a routerLink="/cart-page">
+            Cart <span>{{cartQuantity}}</span>
+          </a>
+        </li>
+        <li>
+          <a *ngIf="!isLogedIn" routerLink="/login">Login</a>
+          <a *ngIf="isLogedIn" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
